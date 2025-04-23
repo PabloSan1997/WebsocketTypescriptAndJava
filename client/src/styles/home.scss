@@ -1,0 +1,20 @@
+.user_list {
+    width: 95%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    h2{
+        font-size: 2rem;
+    }
+    .contenedor_list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+        gap: 0.5rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        .userheader{
+            height: 4rem;
+            width: 100%;
+        }
+    }
+}

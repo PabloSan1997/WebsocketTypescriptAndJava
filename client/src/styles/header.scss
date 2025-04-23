@@ -1,0 +1,17 @@
+header{
+    width: 100%;
+    height: 4rem;
+    background: black;
+    display: flex;
+    h1{
+        margin: auto 2rem;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        transition: transform 0.3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

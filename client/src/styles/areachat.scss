@@ -1,0 +1,44 @@
+
+
+.area_chat{
+    width: 70%;
+    margin:2rem auto;
+    display: flex;
+    flex-direction: column;
+    .screen{
+        display: flex;
+        flex-direction: column;
+        height: 23rem;
+        .message_component{
+            padding: 0.5rem;
+            border-radius: 10px;
+            box-sizing: border-box;
+            display: flex;
+            background: rgb(255, 235, 235);
+            width: fit-content;
+            margin: 0.5rem auto 0.5rem 0;
+            &.ismainuser{
+                background: rgb(236, 236, 250);
+                margin: 0.5rem 0 0.5rem auto;
+            }
+            .message{
+                margin: auto 1rem;
+            }
+        }
+        overflow-y: scroll;
+    }
+    .sendmessage{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        button{
+            margin: 0.5rem auto auto 0;
+            padding: 3px 10px;
+        }
+        textarea{
+            padding: 0.3rem;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+    }
+}
