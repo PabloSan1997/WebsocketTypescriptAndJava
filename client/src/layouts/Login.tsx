@@ -6,11 +6,12 @@ import '../styles/login.scss';
 
 export function Login() {
     const [styles, setSytles] = React.useState<React.CSSProperties>({
-        margin:'0'
+        marginLeft:'0'
     });
+    
 
     const setlogin = () => {
-        setSytles({margin:'0'});
+        setSytles({marginLeft:'0'});
     }
     const setsignup = ()=>{
         setSytles({marginLeft:'-100%'});
@@ -20,7 +21,8 @@ export function Login() {
         <div className="area_res">
             <h2>Log in / Sign up</h2>
             <div className="area_buttons">
-                <button onClick={setlogin}>Login</button><button onClick={setsignup}>Sign up</button>
+                <button onClick={setlogin} className={`${styles.marginLeft=='0' && 'activado'}`}>Login</button>
+                <button onClick={setsignup} className={`${styles.marginLeft!='0' && 'activado'}`}>Sign up</button>
             </div>
             <div className="area_form">
                 <div className="area_slider" style={styles}>

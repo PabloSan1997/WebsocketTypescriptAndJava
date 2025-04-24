@@ -14,4 +14,15 @@ header{
             transform: scale(1.1);
         }
     }
+    button{
+        margin: auto 2rem 0.4rem auto;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
 }

@@ -6,6 +6,7 @@ export function Header() {
   return (
     <header>
         <h1><Link to={routesname.home}>Mi Chat</Link></h1>
+        <button>Log out</button>
     </header>
   );
 }

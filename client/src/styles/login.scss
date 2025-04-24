@@ -1,20 +1,109 @@
-.area_res{
+.area_res {
     width: 50rem;
-    margin:5rem auto;
+    margin: 5rem auto;
     display: flex;
     flex-direction: column;
-    .area_buttons{
+    background: rgb(211, 211, 211);
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
 
+    h2 {
+        margin: 0 auto;
+        background: black;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
     }
-    .area_form{
+
+    .area_buttons {
+        margin: 1rem auto 0;
+
+        button {
+            margin: 0 1rem;
+            width: 5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1.3rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.activado {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .area_form {
         width: 100%;
         overflow: hidden;
-        .area_slider{
+
+        .area_slider {
             width: 200%;
             display: flex;
             transition: margin-left 0.3s ease;
-            form{
+
+            form {
+                padding: 7px;
+                box-sizing: border-box;
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                h2 {
+                    background: none;
+                    color: black;
+                    margin: 0 0 1rem 0;
+                    border-bottom: 1px solid black;
+                    width: 100%;
+                    text-align: left;
+                }
+
+                label {
+                    margin-bottom: 2px;
+                }
+
+                input {
+                    padding: 3px;
+                    box-sizing: border-box;
+                    margin-bottom: 0.5rem;
+                    padding: 4px;
+                    font-size: 1.1rem;
+                    border-radius: 10px;
+                    border: 1px solid rgb(65, 65, 65);
+                    outline: none;
+                }
+
+                textarea {
+                    padding: 3px;
+                    box-sizing: border-box;
+                    margin-bottom: 0.5rem;
+                    padding: 4px;
+                    font-size: 1.1rem;
+                    border-radius: 10px;
+                    border: 1px solid rgb(65, 65, 65);
+                    resize: none;
+                    outline: none;
+                    height: 4rem;
+                }
+
+                button {
+                    margin: 5px auto auto auto;
+                    padding: 2px 5px;
+                    font-size: 1.2rem;
+                    background: rgb(230, 230, 230);
+                    border: 2px solid black;
+                    border-radius: 5px;
+                    &:hover{
+                        cursor: pointer;
+                        background: rgb(209, 209, 209);
+                    }
+                }
             }
         }
     }
