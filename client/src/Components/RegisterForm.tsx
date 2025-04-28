@@ -1,4 +1,5 @@
 import React from "react";
+import { UseContext } from "../ContextProvider";
 
 const initialState: RegisterDto = {
     username: "",
@@ -8,9 +9,16 @@ const initialState: RegisterDto = {
 }
 
 export function RegisterForm() {
+    const {register} = UseContext();
     const [data, setData] = React.useState<RegisterDto>(initialState);
+    const submit = (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if(data.username.trim() && data.password.trim()){
+          register(data);
+        }
+      }
     return (
-        <form className="register">
+        <form className="register" onSubmit={submit}>
             <h2>Registrarse</h2>
             <label htmlFor="usernameregister">Username</label>
             <input

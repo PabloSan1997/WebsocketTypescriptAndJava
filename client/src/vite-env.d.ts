@@ -7,6 +7,7 @@ interface RegisterDto{
     urlImage:string;
 }
 
+
 interface LoginDto{
     username:string;
     password:string;
@@ -37,7 +38,17 @@ interface ReadApi{
     findMessages(userfriend:string, token:string):Promise<MessageDto>;
 }
 
-
+interface SaveMessageDto{
+    message:string;
+}
 interface Children{
     children:JSX.Element|JSX.Element[]
+}
+
+interface ContextInter{
+    token:string;
+    login(data:LoginDto):void;
+    register(data:RegisterDto):void;
+    logout():void;
+    userinfo:UserHeader;
 }

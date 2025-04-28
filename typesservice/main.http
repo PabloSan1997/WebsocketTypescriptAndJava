@@ -1,0 +1,36 @@
+POST http://localhost:3004/api/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"fddsf123",
+    "nickname":"Juana iguana",
+    "urlImage":"juan.com",
+    "password":"hola123"
+}
+
+###
+
+POST http://localhost:3004/api/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"pablo123",
+    "password":"hola123"
+}
+
+###
+
+GET http://localhost:3004/api/user/viewheader HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhYmxvMTIzIiwiYXV0aG9yaXR5IjoiVVNFUiIsIm5pY2tuYW1lIjoiam9zZSBwYWJsbyIsImlhdCI6MTc0NTgwNzk5NCwiZXhwIjoxNzQ1ODk0Mzk0LCJzdWIiOiJwYWJsbzEyMyJ9.3et9zU14f-9PGN8t12KuM8F953LovNyqFqBDTEGsW5E
+
+###
+
+GET http://localhost:3004/api/user/findfriendheader?page=0 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhYmxvMTIzIiwiYXV0aG9yaXR5IjoiVVNFUiIsIm5pY2tuYW1lIjoiam9zZSBwYWJsbyIsImlhdCI6MTc0NTgwNzk5NCwiZXhwIjoxNzQ1ODk0Mzk0LCJzdWIiOiJwYWJsbzEyMyJ9.3et9zU14f-9PGN8t12KuM8F953LovNyqFqBDTEGsW5E
+
+###
+
+GET http://localhost:3004/api/message?userfriend=juan123 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhYmxvMTIzIiwiYXV0aG9yaXR5IjoiVVNFUiIsIm5pY2tuYW1lIjoiam9zZSBwYWJsbyIsImlhdCI6MTc0NTgwNzk5NCwiZXhwIjoxNzQ1ODk0Mzk0LCJzdWIiOiJwYWJsbzEyMyJ9.3et9zU14f-9PGN8t12KuM8F953LovNyqFqBDTEGsW5E
+
+###

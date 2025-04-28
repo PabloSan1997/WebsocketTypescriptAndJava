@@ -1,4 +1,5 @@
 import React from "react";
+import { UseContext } from "../ContextProvider";
 
 const initialState:LoginDto = {
   username: "",
@@ -6,11 +7,16 @@ const initialState:LoginDto = {
 }
 
 export function LoginForm() {
-
+  const {login} = UseContext();
   const [data, setData] = React.useState<LoginDto>(initialState);
-
+  const submit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if(data.username.trim() && data.password.trim()){
+      login(data);
+    }
+  }
   return (
-    <form className="login">
+    <form className="login" onSubmit={submit}>
       <h2>Iniciar Seccion</h2>
       <label htmlFor="usernamelogin">Username</label>
       <input
