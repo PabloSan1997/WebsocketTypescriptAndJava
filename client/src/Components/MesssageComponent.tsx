@@ -1,3 +1,4 @@
+
 import { readApi } from "../api/readApi";
 import { UseContext } from "../ContextProvider";
 import { UserHeader } from "./UserHeader";
@@ -10,10 +11,13 @@ export function MesssageComponent({ id, message, user, createdAt }: MessageDto) 
             <UserHeader {...user} createdAt={createdAt} isNavigate={false} />
             <p className="message">{message}</p>
             {
-                userinfo.username == user.username && (<button onClick={() => {
-                    if (confirm('Seguro que desea borrar este mensaje?'))
-                        readApi.deleteMessage(token, id);
-                }}>X</button>)
+                userinfo.username == user.username && (
+                    <button onClick={() => {
+                        if (confirm('Seguro que desea borrar este mensaje?'))
+                            readApi.deleteMessage(token, id);
+                    }}
+                    >X</button>
+                )
             }
 
         </div>

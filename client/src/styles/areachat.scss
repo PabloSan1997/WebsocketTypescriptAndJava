@@ -16,16 +16,38 @@
             display: flex;
             background: rgb(255, 235, 235);
             width: fit-content;
+            max-width: 100%;
             margin: 0.5rem auto 0.5rem 0;
+            flex-direction: column;
+            position: relative;
             &.ismainuser{
                 background: rgb(236, 236, 250);
                 margin: 0.5rem 0 0.5rem auto;
             }
             .message{
-                margin: auto 1rem;
+                margin: 1rem 1rem;
+                width: fit-content;
+                word-break:break-all;
+            }
+            button{
+                position: absolute;
+                right: 0.5rem;
+                font-size:.9rem;
+                top:0.5rem;
+                border-radius: 100%;
+                width: 1.2rem;
+                height: 1.2rem;
+                border: none;
+                background: rgb(136, 136, 175);
+                color: white;
+                opacity: 0.4;
+                cursor: pointer;
+                &:hover{
+                    opacity: 1;
+                }
             }
         }
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     .sendmessage{
         display: flex;

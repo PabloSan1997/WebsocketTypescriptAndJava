@@ -9,7 +9,6 @@ const messageController = {
         try {
             const userfriend = req.query.userfriend;
             if (!userfriend) throw boom.badRequest('No se detecto "userfriend"');
-            console.log(req.params.theusername + 'mira')
             const mira = messageService.findMessages(req.params.theusername, userfriend as string);
             res.json(await mira);
         } catch (error) {

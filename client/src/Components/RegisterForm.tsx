@@ -31,7 +31,7 @@ export function RegisterForm() {
 
             <label htmlFor="passwordregister">Password</label>
             <input
-                type="text"
+                type="password"
                 id="passwordregister"
                 placeholder="Escribir"
                 value={data.password}

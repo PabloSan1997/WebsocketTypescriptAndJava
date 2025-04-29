@@ -7,10 +7,9 @@ import { useQuery } from "@tanstack/react-query";
 import { UseContext } from "../ContextProvider";
 import { readApi, urlbase } from "../api/readApi";
 import { io } from 'socket.io-client';
-import { logstorage } from "../storage/logstorage";
 
 
-const socket = io(urlbase.socket, { auth: { jwt: logstorage.read() } });
+
 export function Chat() {
   const { token } = UseContext();
   const [search] = useSearchParams();
@@ -20,10 +19,11 @@ export function Chat() {
   const userfriend = usersearch ?? '';
   const [messages, setMessages] = React.useState<MessageDto[]>([]);
 
+  const socket = React.useMemo(() => io(urlbase.socket, { auth: { jwt: token } }), [token]);
 
   React.useEffect(() => {
 
-    socket.on('mes', (mess: MessageDto) => {
+    socket.on(`mes/${userfriend}`, (mess: MessageDto) => {
       setMessages(m => [...m, mess]);
     });
     socket.on('mesdelete', (data: { id: number }) => {

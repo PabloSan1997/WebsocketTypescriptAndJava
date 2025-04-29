@@ -7,14 +7,16 @@ import { Server } from "socket.io";
 export function createSocket(io: Server) {
     io.use((socket, next) => {
         const header = socket.handshake.auth.jwt as string | null | undefined;
-        if (!header)
+        if (!header){
+            socket.data.username='';
             return next(boom.badRequest('authentication fail'));
+        }
         try {
             const user = jwtService.validationToken(header);
             socket.data.username = user.username;
             next();
         } catch (error) {
-            next(error as boom.Boom | Error);
+            return next(error as boom.Boom | Error);
         }
     });
 
@@ -24,8 +26,9 @@ export function createSocket(io: Server) {
         socket.on('mes', async (data: { savemessage: SaveMessageDto, userfriend: string }) => {
             try {
                 const message = await messageService.saveMessage(socket.data.username, data.userfriend, data.savemessage);
-                io.to(username).emit('mes', message);
-                io.to(data.userfriend).emit('mes', message);
+
+                io.to(username).emit(`mes/${data.userfriend}`, message);
+                io.to(data.userfriend).emit(`mes/${username}`, message);
             } catch (error) {
                 const err = error as Boom;
                 if (err.isBoom) {
