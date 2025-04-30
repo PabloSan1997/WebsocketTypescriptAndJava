@@ -37,8 +37,5 @@ interface UserSecurity{
     authority:string;
 }
 
-interface SaveMessageDto{
-    message:string;
-}
 
 

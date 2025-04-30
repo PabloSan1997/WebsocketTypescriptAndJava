@@ -6,6 +6,7 @@ import { UserHeader } from "./UserHeader";
 
 export function MesssageComponent({ id, message, user, createdAt }: MessageDto) {
     const { userinfo, token } = UseContext();
+    console.log(userinfo, console.log(user.username))
     return (
         <div className={userinfo.username == user.username ? 'message_component ismainuser' : 'message_component'} id={`idm${id}`}>
             <UserHeader {...user} createdAt={createdAt} isNavigate={false} />

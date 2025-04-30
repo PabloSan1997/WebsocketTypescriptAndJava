@@ -9,7 +9,7 @@ export class Users{
     username:string;
     @Column({length:60, nullable:false})
     nickname:string;
-    @Column({length:600, nullable:false})
+    @Column({length:600, nullable:false, name:'url_image'})
     urlImage:string;
     @Column({length:600, nullable:false})
     password:string;

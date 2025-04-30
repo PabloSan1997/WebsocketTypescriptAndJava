@@ -7,7 +7,7 @@ export class MessageEntity{
     id:number;
     @Column({length:500, nullable:false})
     message:string;
-    @CreateDateColumn()
+    @CreateDateColumn({name:"created_at"})
     createdAt:Date;
     @ManyToOne(()=> Users, user => user.messagessend, {onDelete:'CASCADE'})
     @JoinColumn({name:'id_user_send'})
