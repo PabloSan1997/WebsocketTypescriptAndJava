@@ -61,7 +61,8 @@ public class SecurityConfig {
                         ).permitAll()
                         .requestMatchers(
                                 "/chatservice",
-                                "/chatservice/**"
+                                "/chatservice/**",
+                                "/", "/index.html", "/assets", "/assets/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
