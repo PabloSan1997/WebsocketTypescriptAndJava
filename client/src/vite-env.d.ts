@@ -52,3 +52,8 @@ interface ContextInter{
     logout():void;
     userinfo:UserHeader;
 }
+
+interface StompMessage{
+    userfriend:string;
+    message:string;
+}

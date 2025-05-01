@@ -2,9 +2,9 @@ import { HashRouter, Navigate, useRoutes } from 'react-router-dom';
 import { routesname } from './routesname';
 import { Login } from '../layouts/Login';
 import { Home } from '../layouts/Home';
-import { Chat } from '../layouts/Chat';
 import { Header } from '../Components/Header';
 import { UseContext } from '../ContextProvider';
+import { ChatStomp } from '../layouts/ChatStomp';
 
 function ViewToken({ children }: Children) {
     const { token } = UseContext();
@@ -30,7 +30,7 @@ const RoutesComponent = () => useRoutes([
     },
     {
         path: routesname.chat,
-        element: (<ViewToken><Chat /></ViewToken>)
+        element: (<ViewToken><ChatStomp /></ViewToken>)
     },
     {
         path:'/',

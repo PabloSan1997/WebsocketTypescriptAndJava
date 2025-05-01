@@ -71,8 +71,8 @@ public class MessageServiceImp implements MessageService {
                     String username = m.getUsersend().getUsername();
                     String userfriend = m.getUserrecive().getUsername();
                     messageRepository.deleteById(m.getId());
-                    simpMessagingTemplate.convertAndSendToUser(username, "/user/chat/deletemessage", idmessage);
-                    simpMessagingTemplate.convertAndSendToUser(userfriend, "/user/chat/deletemessage", idmessage);
+                    simpMessagingTemplate.convertAndSendToUser(username, "/chat/deletemessage", idmessage);
+                    simpMessagingTemplate.convertAndSendToUser(userfriend, "/chat/deletemessage", idmessage);
                 });
     }
 

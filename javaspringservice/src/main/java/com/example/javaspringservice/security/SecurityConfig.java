@@ -60,7 +60,8 @@ public class SecurityConfig {
                                 "/api/user/register"
                         ).permitAll()
                         .requestMatchers(
-                                "/chatservice"
+                                "/chatservice",
+                                "/chatservice/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
